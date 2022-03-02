@@ -50,6 +50,12 @@ export default {
 
     checkPassword (val) {
       this.passwordCheck = val;
+
+      if (this.password === this.passwordCheck) {
+        alert('맞았습니다.')
+      } else {
+        alert('틀렸습니다.')
+      }
     },
 
     checkNameValid (val) {
