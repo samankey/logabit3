@@ -44,16 +44,16 @@ export default {
       // return regEmail.test(this.email);
     },
 
-    checkPasswordValid () {
-
+    checkPasswordValid (val) {
+      this.password = val;
     },
 
-    checkPassword () {
-
+    checkPassword (val) {
+      this.passwordCheck = val;
     },
 
-    checkNameValid () {
-
+    checkNameValid (val) {
+      this.name = val;
     },
   }
 }
