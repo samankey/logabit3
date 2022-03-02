@@ -38,7 +38,6 @@ export default {
 
   methods: {
     inputHandler (e) {
-      console.log('???', e.target.value);
       this.$emit(this.input, e.target.value, this.params);
     }
   }
