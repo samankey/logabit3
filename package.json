@@ -1,0 +1,31 @@
+{
+  "name": "logabit3",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "core-js": "^3.19.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.15.8",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "vue-notification": "^1.3.20",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/moment": "^1.6.1",
+    "eslint": "^8.4.1",
+    "sass": "^1.49.7",
+    "sass-loader": "^10.2.1"
+  }
+}
