@@ -1,5 +1,5 @@
 <template>
-  <div class="buttonDefault Body1" :class="setStyle()">
+  <div class="buttonDefault Body1" :class="setStyle()" @click.stop="emitEvent">
     {{ text }}
   </div>
 </template>
@@ -15,6 +15,16 @@ export default {
     styleType: {
       type: String,
       default: 'default'
+    },
+
+    event: {
+      type: String,
+      default: ''
+    },
+
+    params: {
+      type: [String, Number],
+      default: ''
     }
   },
 
@@ -27,6 +37,10 @@ export default {
         case 'link': return 'link ft_White_100';
         case 'default': return'default ft_White_100';
       }
+    },
+
+    emitEvent () {
+      this.$emit(this.event, this.params);
     }
   }
 };

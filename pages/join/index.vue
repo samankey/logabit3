@@ -8,7 +8,7 @@
     <Input :label="'비밀번호'" :type="'password'" :placeholder="'비밀번호를 입력해주세요! (최소 8글자 이상)'" :input="'checkPasswordValid'" @checkPasswordValid="checkPasswordValid" />
     <Input v-model="passwordCheck" :label="'비밀번호 확인'" :type="'password'" :placeholder="'비밀번호를 다시 입력해주세요!'" :input="'checkPassword'" @checkPassword="checkPassword" />
     <Input v-model="name" :label="'닉네임'" :placeholder="'5글자 이하 한글 닉네임만 가능해요!'" :input="'checkNameValid'" @checkNameValid="checkNameValid" />
-    <ButtonDefault :text="'가입을 완료하시겠어요?'" :style-type="'join'" />
+    <ButtonDefault :text="'가입을 완료하시겠어요?'" :style-type="'join'" :event="'regist'" @regist="regist">
     <ButtonDefault :text="'이미 계정이 있으신가요?'" />
   </div>
 </template>
@@ -61,6 +61,10 @@ export default {
     checkNameValid (val) {
       this.name = val;
     },
+
+    regist () {
+
+    }
   }
 }
 </script>
