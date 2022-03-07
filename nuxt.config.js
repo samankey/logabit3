@@ -1,3 +1,10 @@
+import dotEnv from 'dotenv';
+
+const env = process.env.NODE_ENV;
+const path = '.env.local';
+
+dotEnv.config({ path });
+
 export default {
   ssr: false,
 
@@ -43,10 +50,15 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   axios: {
-    baseURL: '/',
+    baseURL: process.env.API_URL,
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
   },
 
   moment: {

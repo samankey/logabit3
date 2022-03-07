@@ -40,6 +40,7 @@ export default {
     },
 
     emitEvent () {
+      console.log('!!', this.event);
       this.$emit(this.event, this.params);
     }
   }
