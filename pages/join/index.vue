@@ -63,8 +63,11 @@ export default {
     },
 
     async join () {
-      console.log('??');
-      await this.$axios.post('/user/join', { email: 'cc@google.com', password: '12345678', nickname: 'sam' });
+      await this.$axios.post('/user/join', {
+        email: 'cc@google.com',
+        password: '12345678',
+        nickname: 'sam'
+      });
     }
   }
 }
