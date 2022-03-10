@@ -66,7 +66,7 @@ export default {
       await this.$axios.post('/user/join', {
         email: 'cc@google.com',
         password: '12345678',
-        nickname: 'sam'
+        nickname: 'tom'
       });
     }
   }
