@@ -9,7 +9,7 @@
     <Input v-model="passwordCheck" :label="'비밀번호 확인'" :type="'password'" :placeholder="'비밀번호를 다시 입력해주세요!'" :input="'checkPassword'" @checkPassword="checkPassword" />
     <Input v-model="name" :label="'닉네임'" :placeholder="'5글자 이하 한글 닉네임만 가능해요!'" :input="'checkNameValid'" @checkNameValid="checkNameValid" />
     <ButtonDefault :text="'가입을 완료하시겠어요?'" :style-type="'join'" :event="'join'" @join="join" />
-    <ButtonDefault :text="'이미 계정이 있으신가요?'" />
+    <ButtonDefault :text="'이미 계정이 있으신가요?'" :event="'goLogin'" @goLogin="goLogin" />
   </div>
 </template>
 
@@ -37,6 +37,10 @@ export default {
   },
 
   methods: {
+    goLogin () {
+      this.$router.push('/login');
+    },
+
     checkEmail (val) {
       this.email = val;
       const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
