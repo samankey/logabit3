@@ -32,7 +32,7 @@ export default {
       email: '',
       password: '',
       passwordCheck: '',
-      name: ''
+      nickname: ''
     };
   },
 
@@ -59,14 +59,14 @@ export default {
     },
 
     checkNameValid (val) {
-      this.name = val;
+      this.nickname = val;
     },
 
     async join () {
       await this.$axios.post('/user/join', {
-        email,
-        password,
-        nickname
+        email: this.email,
+        password: this.password,
+        nickname: this.nickname
       });
     }
   }
