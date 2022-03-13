@@ -43,12 +43,13 @@ export default {
 
     checkEmail (val) {
       this.email = val;
-      const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      console.log('여기 찍혀야', this.email);
-      // return regEmail.test(this.email);
+      const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+      // 정규식
+      // return regExp.test(this.email);
     },
 
     checkPasswordValid (val) {
+      // 8자리 이상
       this.password = val;
     },
 
@@ -63,6 +64,9 @@ export default {
     },
 
     checkNameValid (val) {
+      // 5자 이하 한글만, keypress 이용할 것
+      // var pattern = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+      // this.value = this.value.replace(pattern, '');
       this.nickname = val;
     },
 
