@@ -36,6 +36,14 @@ export default {
     };
   },
 
+  computed: {
+    validEmail () {
+      const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+      const valid = regExp.test(this.email);
+      return valid;
+    }
+  },
+
   methods: {
     goLogin () {
       this.$router.push('/login');
@@ -43,9 +51,6 @@ export default {
 
     checkEmail (val) {
       this.email = val;
-      const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      // 정규식
-      // return regExp.test(this.email);
     },
 
     checkPasswordValid (val) {
@@ -71,6 +76,10 @@ export default {
     },
 
     async join () {
+      if (this.nickname.length > 5 || this.password.length < 8 || !validEmail) {
+        return this.$notify({ title: '안맞아요', type: 'informative' });
+      }
+      
       await this.$axios.post('/user/join', {
         email: this.email,
         password: this.password,
