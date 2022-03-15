@@ -28,6 +28,10 @@ export default {
   methods: {
     goJoin () {
       this.$router.push('/join');
+    },
+
+    login () {
+      this.$axios.setToken('token', 'Bearer');
     }
   }
 }

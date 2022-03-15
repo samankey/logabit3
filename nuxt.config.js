@@ -37,6 +37,7 @@ export default {
   },
 
   plugins: [
+    '@/plugins/axios.js',
     { src: '~/plugins/notifications-ssr', ssr: false },
     { src: '~/plugins/notifications-client', ssr: false }
   ],
